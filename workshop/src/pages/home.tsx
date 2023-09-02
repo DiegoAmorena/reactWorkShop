@@ -1,15 +1,15 @@
 import { ChangeEvent, useEffect, useState } from "react"
-import { User, randomWords } from "./names"
+import { User, randomPeople } from "./names"
 import styles from "./home.module.scss"
 
 export const Home: React.FC = () => {
   const [counter, setCounter] = useState<number>(0)
-  const [filteredMembers, setFilteredMembers] = useState<string[]>(randomWords)
+  const [filteredMembers, setFilteredMembers] = useState<User[]>(randomPeople)
   const [name, setName] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const user:User = {
-    name,
-    password
+  const [surname, setSurname] = useState<string>("")
+  const user: User = {
+    name: name,
+    surname: surname
   }
   const onHandleClick = () => {
     console.log("onHandleClick")
@@ -19,13 +19,18 @@ export const Home: React.FC = () => {
     console.log("onHandleKeyUser")
     setName(event.target.value)
   }
-  const onHandleKeyPassword = (event: ChangeEvent<HTMLInputElement>) => {
+  const onHandleKeySurname = (event: ChangeEvent<HTMLInputElement>) => {
     console.log("onHandleKeyUser")
-    setPassword(event.target.value)
+    setSurname(event.target.value)
   }
   useEffect(() => {
     console.log("ejecuto useEffect")
-    setFilteredMembers(randomWords.filter((x) => x.includes(user.name.toLocaleLowerCase())))
+    setTimeout(() =>
+      setFilteredMembers(randomPeople.filter((x) =>
+        x.name.includes(user.name.toLocaleLowerCase()) &&
+        x.surname.includes(user.surname.toLocaleLowerCase())
+      ))
+      , 500)
   }, [user])
 
   return (
@@ -46,17 +51,17 @@ export const Home: React.FC = () => {
           />
           <input
             type="text"
-            name="password"
-            placeholder="password"
-            onChange={(e) => onHandleKeyPassword(e)}
-            value={user.password}
+            name="surname"
+            placeholder="surname"
+            onChange={(e) => onHandleKeySurname(e)}
+            value={user.surname}
           />
         </div>
       </div>
       <div className={styles.content}>
         {
-          filteredMembers.map((name) => (
-            <p key={name}>{name}</p>
+          filteredMembers.map((user) => (
+            <p key={user.name + user.surname}>{user.name + " " + user.surname}</p>
           ))
         }
       </div>

@@ -1,25 +1,237 @@
 export type User={
   name:string,
-  password:string
+  surname:string
 }
 
-export const randomWords: string[] = [
-  "Lebron",
-  "React",
-  "Peras",
-  "Felicidad",
-  "Humberto",
-  "Arrospide",
-  "Arroz",
-  "Abecedario",
-  "Capicua",
-  "Typescript",
-  "Repollo",
-  "Chaleco",
-  "Juan",
-  "Jane Doe",
-  "Domingo",
-  "Sunday",
-  "Guthib",
-  "Lol"
+export const randomPeople: User[] = [
+{
+  name:"  Andrés",
+  surname:"Hernández" 
+},
+{
+  name:"Ana",
+  surname:"Hernández" 
+},
+{
+  name:"Sebastián",
+  surname:"Hernández" 
+},
+{
+  name:"Valentina",
+  surname:"Hernández" 
+},
+{
+  name:"Gabriel",
+  surname:"Hernández" 
+},
+{
+  name:"Carolina",
+  surname:"Hernández" 
+},
+{
+  name:"Francisco",
+  surname:"Hernández" 
+},
+{
+  name:"Isabella",
+  surname:"Hernández" 
+},
+{
+  name:"Juan",
+  surname:"Hernández" 
+},
+{
+  name:"Camila",
+  surname:"Hernández" 
+},
+{
+  name:"Alejandro",
+  surname:"Hernández" 
+},
+{
+  name:"Natalia",
+  surname:"Hernández" 
+},
+{
+  name:"David",
+  surname:"Hernández" 
+},
+{
+  name:"Gabriela",
+  surname:"Hernández" 
+},
+{
+  name:"Manuel",
+  surname:"Hernández" 
+},
+{
+  name:"Sofía",
+  surname:"Hernández" 
+},
+{
+  name:"Diego",
+  surname:"Hernández" 
+},
+{
+  name:"Mariana",
+  surname:"Hernández" 
+},
+{
+  name:"Javier",
+  surname:"Hernández" 
+},
+{
+  name:"Valeria",
+  surname:"Hernández" 
+},
+{
+  name:"Rosalinda",
+  surname:"Flores" 
+},
+{
+  name:"Violeta",
+  surname:"Flores" 
+},
+{
+  name:"Azucena",
+  surname:"Flores" 
+},
+{
+  name:"Margarita",
+  surname:"Flores" 
+},
+{
+  name:"Amaranta",
+  surname:"Flores" 
+},
+{
+  name:"Lirio",
+  surname:"Flores" 
+},
+{
+  name:"Jazmín",
+  surname:"Flores" 
+},
+{
+  name:"Orquídea",
+  surname:"Flores" 
+},
+{
+  name:"Magnolia",
+  surname:"Flores" 
+},
+{
+  name:"Camelia",
+  surname:"Flores" 
+},
+{
+  name:"Narciso",
+  surname:"Flores" 
+},
+{
+  name:"Amapola",
+  surname:"Flores" 
+},
+{
+  name:"Hortensia",
+  surname:"Flores" 
+},
+{
+  name:"Dalia",
+  surname:"Flores" 
+},
+{
+  name:"Petunia",
+  surname:"Flores" 
+},
+{
+  name:"Begonia",
+  surname:"Flores" 
+},
+{
+  name:"Tulipán",
+  surname:"Flores" 
+},
+{
+  name:"Geranio",
+  surname:"Flores" 
+},
+{
+  name:"Caléndula",
+  surname:"Flores" 
+},
+{
+  name:"Iris",
+  surname:"Flores" 
+},
+{
+  name:"Martín",
+  surname:"González" 
+},
+
+{
+  name:"Isabella",
+  surname:"González" 
+},
+{
+  name:"Juan",
+  surname:"González" 
+},
+{
+  name:"Camila",
+  surname:"González" 
+},
+{
+  name:"Francisco",
+  surname:"González" 
+},
+{
+  name:"Gabriela",
+  surname:"González" 
+},
+{
+  name:"Diego",
+  surname:"González" 
+},
+{
+  name:"Carolina",
+  surname:"González" 
+},
+{
+  name:"Gabriela",
+  surname:"Martínez" 
+},
+{
+  name:"Manuel",
+  surname:"Martínez" 
+},
+{
+  name:"Sofía",
+  surname:"Martínez" 
+},
+{
+  name:"Diego",
+  surname:"Martínez" 
+},
+{
+  name:"Victoria",
+  surname:"Rodríguez" 
+},
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 ]
