@@ -1,10 +1,11 @@
 import { useState } from "react"
-import styles from "./counter.module.scss"
+import styles from "./couter.module.scss"
 
 export const Counter = () => {
   const [counter, setCounter] = useState<number>(0)
   const onHandleClick = () => {
     console.log("onHandleClick")
+    setCounter(counter + 1)
     setCounter(counter + 1)
   }
   return (

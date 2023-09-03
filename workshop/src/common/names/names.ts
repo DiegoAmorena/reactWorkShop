@@ -1,237 +1,226 @@
-export type User={
-  name:string,
-  surname:string
+export type Person = {
+  name: string,
+  lastName: string
 }
 
-export const randomPeople: User[] = [
-{
-  name:"  Andrés",
-  surname:"Hernández" 
-},
-{
-  name:"Ana",
-  surname:"Hernández" 
-},
-{
-  name:"Sebastián",
-  surname:"Hernández" 
-},
-{
-  name:"Valentina",
-  surname:"Hernández" 
-},
-{
-  name:"Gabriel",
-  surname:"Hernández" 
-},
-{
-  name:"Carolina",
-  surname:"Hernández" 
-},
-{
-  name:"Francisco",
-  surname:"Hernández" 
-},
-{
-  name:"Isabella",
-  surname:"Hernández" 
-},
-{
-  name:"Juan",
-  surname:"Hernández" 
-},
-{
-  name:"Camila",
-  surname:"Hernández" 
-},
-{
-  name:"Alejandro",
-  surname:"Hernández" 
-},
-{
-  name:"Natalia",
-  surname:"Hernández" 
-},
-{
-  name:"David",
-  surname:"Hernández" 
-},
-{
-  name:"Gabriela",
-  surname:"Hernández" 
-},
-{
-  name:"Manuel",
-  surname:"Hernández" 
-},
-{
-  name:"Sofía",
-  surname:"Hernández" 
-},
-{
-  name:"Diego",
-  surname:"Hernández" 
-},
-{
-  name:"Mariana",
-  surname:"Hernández" 
-},
-{
-  name:"Javier",
-  surname:"Hernández" 
-},
-{
-  name:"Valeria",
-  surname:"Hernández" 
-},
-{
-  name:"Rosalinda",
-  surname:"Flores" 
-},
-{
-  name:"Violeta",
-  surname:"Flores" 
-},
-{
-  name:"Azucena",
-  surname:"Flores" 
-},
-{
-  name:"Margarita",
-  surname:"Flores" 
-},
-{
-  name:"Amaranta",
-  surname:"Flores" 
-},
-{
-  name:"Lirio",
-  surname:"Flores" 
-},
-{
-  name:"Jazmín",
-  surname:"Flores" 
-},
-{
-  name:"Orquídea",
-  surname:"Flores" 
-},
-{
-  name:"Magnolia",
-  surname:"Flores" 
-},
-{
-  name:"Camelia",
-  surname:"Flores" 
-},
-{
-  name:"Narciso",
-  surname:"Flores" 
-},
-{
-  name:"Amapola",
-  surname:"Flores" 
-},
-{
-  name:"Hortensia",
-  surname:"Flores" 
-},
-{
-  name:"Dalia",
-  surname:"Flores" 
-},
-{
-  name:"Petunia",
-  surname:"Flores" 
-},
-{
-  name:"Begonia",
-  surname:"Flores" 
-},
-{
-  name:"Tulipán",
-  surname:"Flores" 
-},
-{
-  name:"Geranio",
-  surname:"Flores" 
-},
-{
-  name:"Caléndula",
-  surname:"Flores" 
-},
-{
-  name:"Iris",
-  surname:"Flores" 
-},
-{
-  name:"Martín",
-  surname:"González" 
-},
+export const filterPeople = ({ p }: { p: Person }): Person[] => {
+  return randomPeople.filter((person) =>
+    person.name.toLocaleLowerCase().includes(p.name.toLocaleLowerCase()) &&
+    person.lastName.toLocaleLowerCase().includes(p.lastName.toLocaleLowerCase())
+  )
+}
 
-{
-  name:"Isabella",
-  surname:"González" 
-},
-{
-  name:"Juan",
-  surname:"González" 
-},
-{
-  name:"Camila",
-  surname:"González" 
-},
-{
-  name:"Francisco",
-  surname:"González" 
-},
-{
-  name:"Gabriela",
-  surname:"González" 
-},
-{
-  name:"Diego",
-  surname:"González" 
-},
-{
-  name:"Carolina",
-  surname:"González" 
-},
-{
-  name:"Gabriela",
-  surname:"Martínez" 
-},
-{
-  name:"Manuel",
-  surname:"Martínez" 
-},
-{
-  name:"Sofía",
-  surname:"Martínez" 
-},
-{
-  name:"Diego",
-  surname:"Martínez" 
-},
-{
-  name:"Victoria",
-  surname:"Rodríguez" 
-},
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-]
+export const randomPeople: Person[] = [
+  {
+    name: "  Andrés",
+    lastName: "Hernández"
+  },
+  {
+    name: "Ana",
+    lastName: "Hernández"
+  },
+  {
+    name: "Sebastián",
+    lastName: "Hernández"
+  },
+  {
+    name: "Valentina",
+    lastName: "Hernández"
+  },
+  {
+    name: "Gabriel",
+    lastName: "Hernández"
+  },
+  {
+    name: "Carolina",
+    lastName: "Hernández"
+  },
+  {
+    name: "Francisco",
+    lastName: "Hernández"
+  },
+  {
+    name: "Isabella",
+    lastName: "Hernández"
+  },
+  {
+    name: "Juan",
+    lastName: "Hernández"
+  },
+  {
+    name: "Camila",
+    lastName: "Hernández"
+  },
+  {
+    name: "Alejandro",
+    lastName: "Hernández"
+  },
+  {
+    name: "Natalia",
+    lastName: "Hernández"
+  },
+  {
+    name: "David",
+    lastName: "Hernández"
+  },
+  {
+    name: "Gabriela",
+    lastName: "Hernández"
+  },
+  {
+    name: "Manuel",
+    lastName: "Hernández"
+  },
+  {
+    name: "Sofía",
+    lastName: "Hernández"
+  },
+  {
+    name: "Diego",
+    lastName: "Hernández"
+  },
+  {
+    name: "Mariana",
+    lastName: "Hernández"
+  },
+  {
+    name: "Javier",
+    lastName: "Hernández"
+  },
+  {
+    name: "Valeria",
+    lastName: "Hernández"
+  },
+  {
+    name: "Rosalinda",
+    lastName: "Flores"
+  },
+  {
+    name: "Violeta",
+    lastName: "Flores"
+  },
+  {
+    name: "Azucena",
+    lastName: "Flores"
+  },
+  {
+    name: "Margarita",
+    lastName: "Flores"
+  },
+  {
+    name: "Amaranta",
+    lastName: "Flores"
+  },
+  {
+    name: "Lirio",
+    lastName: "Flores"
+  },
+  {
+    name: "Jazmín",
+    lastName: "Flores"
+  },
+  {
+    name: "Orquídea",
+    lastName: "Flores"
+  },
+  {
+    name: "Magnolia",
+    lastName: "Flores"
+  },
+  {
+    name: "Camelia",
+    lastName: "Flores"
+  },
+  {
+    name: "Narciso",
+    lastName: "Flores"
+  },
+  {
+    name: "Amapola",
+    lastName: "Flores"
+  },
+  {
+    name: "Hortensia",
+    lastName: "Flores"
+  },
+  {
+    name: "Dalia",
+    lastName: "Flores"
+  },
+  {
+    name: "Petunia",
+    lastName: "Flores"
+  },
+  {
+    name: "Begonia",
+    lastName: "Flores"
+  },
+  {
+    name: "Tulipán",
+    lastName: "Flores"
+  },
+  {
+    name: "Geranio",
+    lastName: "Flores"
+  },
+  {
+    name: "Caléndula",
+    lastName: "Flores"
+  },
+  {
+    name: "Iris",
+    lastName: "Flores"
+  },
+  {
+    name: "Martín",
+    lastName: "González"
+  },
+
+  {
+    name: "Isabella",
+    lastName: "González"
+  },
+  {
+    name: "Juan",
+    lastName: "González"
+  },
+  {
+    name: "Camila",
+    lastName: "González"
+  },
+  {
+    name: "Francisco",
+    lastName: "González"
+  },
+  {
+    name: "Gabriela",
+    lastName: "González"
+  },
+  {
+    name: "Diego",
+    lastName: "González"
+  },
+  {
+    name: "Carolina",
+    lastName: "González"
+  },
+  {
+    name: "Gabriela",
+    lastName: "Martínez"
+  },
+  {
+    name: "Manuel",
+    lastName: "Martínez"
+  },
+  {
+    name: "Sofía",
+    lastName: "Martínez"
+  },
+  {
+    name: "Diego",
+    lastName: "Martínez"
+  },
+  {
+    name: "Victoria",
+    lastName: "Rodríguez"
+  }]

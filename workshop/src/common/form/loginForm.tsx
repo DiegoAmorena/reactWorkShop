@@ -5,7 +5,7 @@ export const LoginForm = () => {
   const {
     user,
     filteredMembers,
-    onHandleKeySurname,
+    onHandleKeyLastName,
     onHandleKeyName
   } = useLoginForm()
   return (
@@ -22,17 +22,17 @@ export const LoginForm = () => {
           />
           <input
             type="text"
-            name="surname"
-            placeholder="surname"
-            value={user.surname}
-            onChange={onHandleKeySurname}
+            name="lastName"
+            placeholder="lastName"
+            value={user.lastName}
+            onChange={onHandleKeyLastName}
           />
         </div>
       </div>
       <div className={styles.content}>
         {
           filteredMembers.map((user) => (
-            <p key={user.name + user.surname}>{user.name + " " + user.surname}</p>
+            <p key={user.name + user.lastName}>{user.name + " " + user.lastName}</p>
           ))
         }
       </div>

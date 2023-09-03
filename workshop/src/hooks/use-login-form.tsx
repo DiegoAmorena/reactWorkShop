@@ -1,37 +1,38 @@
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
-import { User, randomPeople } from "../common/names/names";
+import { Person, filterPeople, randomPeople } from "../common/names/names";
 
 export const useLoginForm = () => {
   const [name, setName] = useState<string>("")
-  const [surname, setSurname] = useState<string>("")
-  const user = useMemo(() => {
+  const [lastName, setLastName] = useState<string>("")
+  const user: Person = useMemo(() => {
     return {
       name: name,
-      surname: surname
+      lastName: lastName
     }
-  }, [name, surname])
-  const [filteredMembers, setFilteredMembers] = useState<User[]>(randomPeople)
+  }, [name, lastName])
+  const [filteredMembers, setFilteredMembers] = useState<Person[]>(randomPeople)
   const onHandleKeyName = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("onHandleKeyUser executed")
     setName(event.target.value)
   }
-  const onHandleKeySurname = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("onHandleKeyUser executed")
-    setSurname(event.target.value)
+  const onHandleKeyLastName = (event: ChangeEvent<HTMLInputElement>) => {
+    setLastName(event.target.value)
   }
   useEffect(() => {
-    console.log("useEffect executed")
+    const controller = new AbortController()
     setTimeout(() =>
-      setFilteredMembers(randomPeople.filter((x) =>
-        x.name.toLocaleLowerCase().includes(user.name.toLocaleLowerCase()) &&
-        x.surname.toLocaleLowerCase().includes(user.surname.toLocaleLowerCase())
-      ))
-      , 5000)
+      setFilteredMembers(filterPeople({ p: user }))
+      , 1500)
+    return () => {
+      controller.abort()
+    }
   }, [user])
   return {
     user,
     filteredMembers,
-    onHandleKeySurname,
+    onHandleKeyLastName,
     onHandleKeyName
   }
 }
+//const fetchData = async () => {
+//  const response = await fetch("", { signal:controller.signal })
+//}
