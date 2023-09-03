@@ -1,13 +1,15 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useState } from "react";
 import { User, randomPeople } from "../common/names/names";
 
 export const useLoginForm = () => {
   const [name, setName] = useState<string>("")
   const [surname, setSurname] = useState<string>("")
-  const user: User = {
-    name: name,
-    surname: surname
-  }
+  const user = useMemo(() => {
+    return {
+      name: name,
+      surname: surname
+    }
+  }, [name, surname])
   const [filteredMembers, setFilteredMembers] = useState<User[]>(randomPeople)
   const onHandleKeyName = (event: ChangeEvent<HTMLInputElement>) => {
     console.log("onHandleKeyUser executed")
