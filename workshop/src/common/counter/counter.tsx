@@ -4,7 +4,6 @@ import styles from "./counter.module.scss"
 export const Counter = () => {
   const [counter, setCounter] = useState<number>(0)
   const onHandleClick = () => {
-    console.log("onHandleClick")
     setCounter(counter + 1)
   }
   return (
