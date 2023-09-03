@@ -12,25 +12,21 @@ export const Home: React.FC = () => {
     surname: surname
   }
   const onHandleClick = () => {
-    console.log("onHandleClick")
     setCounter(counter + 1)
   }
   const onHandleKeyName = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("onHandleKeyUser")
     setName(event.target.value)
   }
   const onHandleKeySurname = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("onHandleKeyUser")
     setSurname(event.target.value)
   }
   useEffect(() => {
-    console.log("ejecuto useEffect")
     setTimeout(() =>
       setFilteredMembers(randomPeople.filter((x) =>
-        x.name.includes(user.name.toLocaleLowerCase()) &&
-        x.surname.includes(user.surname.toLocaleLowerCase())
+        x.name.toLocaleLowerCase().includes(user.name.toLocaleLowerCase()) &&
+        x.surname.toLocaleLowerCase().includes(user.surname.toLocaleLowerCase())
       ))
-      , 500)
+      , 1500)
   }, [user])
 
   return (
