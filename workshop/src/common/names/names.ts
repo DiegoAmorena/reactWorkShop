@@ -7,12 +7,12 @@ export const filterPeople = ({ p }: { p: Person }): Person[] => {
   return randomPeople.filter((person) =>
     person.name.toLocaleLowerCase().includes(p.name.toLocaleLowerCase()) &&
     person.lastName.toLocaleLowerCase().includes(p.lastName.toLocaleLowerCase())
-  )
+  ).slice(0,15)
 }
 
 export const randomPeople: Person[] = [
   {
-    name: "  Andrés",
+    name: "Andrés",
     lastName: "Hernández"
   },
   {

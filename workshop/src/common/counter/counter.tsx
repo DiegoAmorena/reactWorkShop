@@ -5,13 +5,13 @@ export const Counter = () => {
   const [counter, setCounter] = useState<number>(0)
   const onHandleClick = () => {
     console.log("onHandleClick")
-    setCounter(counter + 1)
-    setCounter(counter + 1)
+    setCounter((prev) => prev+1)
+    setCounter((prev) => prev+1)
   }
   return (
     <div className={styles.content}>
         <h2>Counter: {counter}</h2>
-        <button type="button" onClick={onHandleClick}>Add 1</button>
+        <button type="button" onClick={onHandleClick}>Add 2</button>
       </div>
   )
 }
